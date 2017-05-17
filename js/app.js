@@ -25,6 +25,7 @@ const megaroster = {
     this.studentList.appendChild(listItem)
     
     this.max ++
+    f.reset()
   },
 
   buildListItem(student) {
