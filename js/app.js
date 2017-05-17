@@ -53,6 +53,9 @@ const megaroster = {
   removeStudent(ev) {
     const btn = ev.target
     btn.closest('.student').remove()
+
+    // Remove it from the this.students array
+    // this.students.splice(?, 1)
   },
 
   removeClassName(el, className) {
