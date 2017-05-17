@@ -18,6 +18,7 @@ const megaroster = {
       id: this.max + 1,
       name: f.studentName.value,
     }
+    this.students.push(student)
     const listItem = this.buildListItem(student)
     this.studentList.appendChild(listItem)
     this.max ++
