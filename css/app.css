@@ -18,7 +18,7 @@
   overflow-x: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: calc(100% - 110px)
+  width: calc(100% - 195px)
 }
 
 .actions {
@@ -29,4 +29,10 @@
 .promoted {
   background-color: #ffa807;
   border-color: #ffc656;
+}
+
+.student:first-child button.move-up {
+  background-color: #ddd;
+  color: #eee;
+  cursor: not-allowed;
 }

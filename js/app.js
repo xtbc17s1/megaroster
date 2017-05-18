@@ -65,19 +65,43 @@ class Megaroster {
     }
 
     this.removeClassName(li, 'template')
+    this.setupActions(li, student)
 
+    return li
+  }
+
+  setupActions(li, student) {
     li
       .querySelector('button.remove')
       .addEventListener('click', this.removeStudent.bind(this))
     li
       .querySelector('button.promote')
       .addEventListener('click', this.promoteStudent.bind(this, student))
-
-    return li
+    li
+      .querySelector('button.move-up')
+      .addEventListener('click', this.moveUp.bind(this, student))
   }
 
   save() {
     localStorage.setItem('roster', JSON.stringify(this.students))
+  }
+
+  moveUp(student, ev) {
+    const btn = ev.target
+    const li = btn.closest('.student')
+
+    const index = this.students.findIndex((currentStudent, i) => {
+      return currentStudent.id === student.id
+    })
+
+    if (index > 0) {
+      this.studentList.insertBefore(li, li.previousElementSibling)
+      
+      const previousStudent = this.students[index - 1]
+      this.students[index - 1] = student
+      this.students[index] = previousStudent
+      this.save()
+    }
   }
 
   promoteStudent(student, ev) {
