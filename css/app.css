@@ -25,3 +25,8 @@
   float: right;
   margin-bottom: 0;
 }
+
+.promoted {
+  background-color: #ffa807;
+  border-color: #ffc656;
+}
