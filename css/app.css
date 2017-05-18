@@ -12,9 +12,13 @@
   border-top: none;
 }
 
-span.student-name {
-  line-height: 40px;
+.student-name {
+  float: left;
+  line-height: 38px;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
   white-space: nowrap;
+  width: calc(100% - 195px)
 }
 
 .actions {
