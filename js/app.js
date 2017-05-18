@@ -30,6 +30,8 @@ const megaroster = {
     
     this.max ++
     f.reset()
+
+    localStorage.setItem('roster', JSON.stringify(this.students))
   },
 
   prependChild(parent, child) {
