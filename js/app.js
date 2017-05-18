@@ -46,6 +46,20 @@ const megaroster = {
     this.save()
   },
 
+  promoteStudent(student, ev) {
+    const btn = ev.target
+    const li = btn.closest('.student')
+    student.promoted = !student.promoted
+
+    if (student.promoted) {
+      li.classList.add('promoted')
+    } else {
+      li.classList.remove('promoted')
+    }
+    
+    this.save()
+  },
+
   addStudentViaForm(ev) {
     ev.preventDefault()
     const f = ev.target
@@ -80,9 +94,18 @@ const megaroster = {
     li.querySelector('.student-name').textContent = student.name
     li.dataset.id = student.id
 
+    if(student.promoted) {
+      li.classList.add('promoted')
+    }
+
     li
       .querySelector('button.remove')
       .addEventListener('click', this.removeStudent.bind(this))
+
+    li
+      .querySelector('button.promote')
+      .addEventListener('click', this.promoteStudent.bind(this, student))
+
     return li
   },
 

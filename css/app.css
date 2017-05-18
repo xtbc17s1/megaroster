@@ -21,3 +21,8 @@ span.student-name {
   float: right;
   margin-bottom: 0;
 }
+
+.promoted {
+  background-color: #FFA807;
+  border-color: #FFC656;
+}
