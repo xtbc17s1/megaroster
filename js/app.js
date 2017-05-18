@@ -23,7 +23,9 @@ const megaroster = {
   load() {
     const rosterString = localStorage.getItem('roster')
     const rosterArray = JSON.parse(rosterString)
-    rosterArray.map(this.addStudent.bind(this))
+    rosterArray
+      .reverse()
+      .map(this.addStudent.bind(this))
   },
 
   removeStudent(ev) {
@@ -53,7 +55,7 @@ const megaroster = {
     f.reset()
   },
 
-  addStudent(student) {
+  addStudent(student, append) {
     this.students.unshift(student)
 
     const listItem = this.buildListItem(student)
