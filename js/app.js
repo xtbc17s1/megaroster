@@ -43,7 +43,10 @@ const megaroster = {
     const listItem = this.buildListItem(student)
     this.prependChild(this.studentList, listItem)
     
-    this.max ++
+    if (student.id > this.max) {
+      this.max = student.id
+    }
+
     this.save()
   },
 
