@@ -5,10 +5,20 @@
 .student {
   border: 1px solid #ddd;
   padding: 0.75rem 1.25rem;
+  height: 4rem;
 }
 
 .student + .student {
   border-top: 0;
+}
+
+.student-name {
+  float: left;
+  line-height: 38px;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: calc(100% - 110px)
 }
 
 .actions {

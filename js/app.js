@@ -58,6 +58,7 @@ const megaroster = {
     const template = document.querySelector('.student.template')
     const li = template.cloneNode(true)
     li.querySelector('.student-name').textContent = student.name
+    li.setAttribute('title', student.name)
     li.dataset.id = student.id
     this.removeClassName(li, 'template')
 
