@@ -22,10 +22,12 @@ const megaroster = {
 
   load() {
     const rosterString = localStorage.getItem('roster')
-    const rosterArray = JSON.parse(rosterString)
-    rosterArray
-      .reverse()
-      .map(this.addStudent.bind(this))
+    if (rosterString) {
+      const rosterArray = JSON.parse(rosterString)
+      rosterArray
+        .reverse()
+        .map(this.addStudent.bind(this))
+    }
   },
 
   removeStudent(ev) {

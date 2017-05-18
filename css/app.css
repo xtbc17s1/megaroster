@@ -5,10 +5,16 @@
 .student {
   border: 1px solid #ddd;
   padding: 0.75rem 1.25rem;
+  height: 4rem;
 }
 
 .student + .student {
   border-top: none;
+}
+
+span.student-name {
+  line-height: 40px;
+  white-space: nowrap;
 }
 
 .actions {
