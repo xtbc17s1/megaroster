@@ -26,7 +26,7 @@ h2 {
   overflow-x: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: calc(100% - 195px)
+  width: calc(100% - 255px)
 }
 
 .actions {
@@ -55,13 +55,13 @@ h2 {
   cursor: not-allowed;
 }
 
-[contenteditable]:hover {
+[contenteditable="true"]:hover {
   outline-color: -webkit-focus-ring-color;
   outline-style: auto;
   outline-width: 2px;
 }
 
-[contenteditable]:focus {
+[contenteditable="true"]:focus {
   outline-width: 5px;
 }
 

@@ -119,12 +119,36 @@ class Megaroster {
       .addEventListener('click', this.moveDown.bind(this, student))
 
     li
-      .querySelector('[contenteditable]')
-      .addEventListener('blur', this.updateName.bind(this, student))
+      .querySelector('button.edit')
+      .addEventListener('click', this.edit.bind(this, student, li.querySelector('.student-name')))
 
-    li
-      .querySelector('[contenteditable]')
-      .addEventListener('keypress', this.saveOnEnter.bind(this))
+    // li
+    //   .querySelector('[contenteditable]')
+    //   .addEventListener('blur', this.updateName.bind(this, student))
+
+    // li
+    //   .querySelector('[contenteditable]')
+    //   .addEventListener('keypress', this.saveOnEnter.bind(this))
+  }
+
+  edit(student, nameField, ev) {
+    const btn = ev.currentTarget
+    const icon = btn.querySelector('i.fa')
+
+    if (nameField.isContentEditable) {
+      nameField.contentEditable = false
+      btn.classList.remove('success')
+      icon.classList.remove('fa-check')
+      icon.classList.add('fa-pencil')
+      student.name = nameField.textContent
+      this.save()
+    } else {
+      nameField.contentEditable = true
+      btn.classList.add('success')
+      icon.classList.remove('fa-pencil')
+      icon.classList.add('fa-check')
+      nameField.focus()
+    }
   }
 
   saveOnEnter(ev) {
@@ -134,10 +158,10 @@ class Megaroster {
     }
   }
 
-  updateName(student, ev) {
-    student.name = ev.target.textContent
-    this.save()
-  }
+  // updateName(student, ev) {
+  //   student.name = ev.target.textContent
+  //   this.save()
+  // }
 
   moveUp(student, ev) {
     const btn = ev.target
