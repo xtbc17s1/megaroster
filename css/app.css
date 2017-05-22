@@ -37,3 +37,13 @@
   color: #eee;
   cursor: not-allowed;
 }
+
+[contenteditable]:hover {
+  outline-color: -webkit-focus-ring-color;
+  outline-style: auto;
+  outline-width: 2px;
+}
+
+[contenteditable]:focus {
+  outline-width: 5px;
+}
