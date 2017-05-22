@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
+
+h2 {
+  font-family: 'Abril Fatface', cursive;
+  text-transform: lowercase;
+}
+
 .template {
   visibility: hidden;
 }
