@@ -31,7 +31,8 @@
   border-color: #FFC656;
 }
 
-.student:first-child button.move-up {
+.student:first-child button.move-up,
+.student:last-child button.move-down {
   background-color: #ddd;
   color: #eee;
   cursor: not-allowed;
