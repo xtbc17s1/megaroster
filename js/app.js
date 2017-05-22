@@ -84,10 +84,30 @@ class Megaroster {
     li
       .querySelector('button.move-down')
       .addEventListener('click', this.moveDown.bind(this, student))
+
+    li
+      .querySelector('[contenteditable]')
+      .addEventListener('blur', this.updateName.bind(this, student))
+
+    li
+      .querySelector('[contenteditable]')
+      .addEventListener('keypress', this.saveOnEnter.bind(this))
   }
 
   save() {
     localStorage.setItem('roster', JSON.stringify(this.students))
+  }
+
+  updateName(student, ev) {
+    student.name = ev.target.textContent
+    this.save()
+  }
+
+  saveOnEnter(ev) {
+    if (ev.keyCode === 13) {
+      ev.preventDefault()
+      ev.target.blur()
+    }
   }
 
   moveUp(student, ev) {
