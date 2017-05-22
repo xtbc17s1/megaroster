@@ -34,6 +34,15 @@ h2 {
   margin-bottom: 0;
 }
 
+.actions .button {
+  padding: 0.5em 0.69em 0.5em 0.64em;
+  font-size: 1.2rem;
+}
+
+.actions .button:hover {
+  transform: scale(1.1);
+}
+
 .promoted {
   background-color: #FFA807;
   border-color: #FFC656;
@@ -54,4 +63,8 @@ h2 {
 
 [contenteditable]:focus {
   outline-width: 5px;
+}
+
+#new-student .success {
+  color: white;
 }
